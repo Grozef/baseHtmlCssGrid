@@ -73,3 +73,78 @@ footer{
 .paragraphe{
     margin: 20px;
 }
+
+/* Media Query pour les écrans de taille moyenne */
+@media screen and (max-width: 768px) {
+    html, body{
+        height: 100%;
+        margin: 0;
+    }
+    
+    body {
+        grid-template-columns: 1fr;
+        grid-template-rows:10% 9fr;
+    }
+
+    header{
+        background-color: blue;
+        grid-row-start: 1;
+        grid-row-end: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }    
+
+    .container{
+        background-color: aquamarine;
+        display: grid; 
+        grid-row-start: 2;
+        grid-row-end: 7; 
+        grid-template-rows:10% 9fr;
+        grid-template-columns: 1fr;
+    }
+
+    .navbar{
+        background-color: rgb(10, 171, 192);
+        grid-row-start: 1;
+        grid-row-end: 2;
+        grid-column-start: 1;
+        grid-column-end: 2;  
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    
+    }
+    
+    .aside{
+        background-color: cadetblue;
+        grid-row-start: 2;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;  
+    }
+    
+    .content{
+        background-color: rgb(29, 12, 139);
+        grid-row-start: 3;
+        grid-row-end: 10;
+        grid-column-start: 1;
+        grid-column-end: 2;  
+    }
+    
+}
+
+footer{
+    background-color: blueviolet;
+    grid-row-start: 7;
+    grid-row-end: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+/* Media Query pour les écrans de petite taille */
+@media screen and (max-width: 480px) {
+
+}
