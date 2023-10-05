@@ -1,6 +1,6 @@
 html, body{
     height: 100%;
-    width: 100%;
+    margin: 0;
 }
 
 body{
@@ -12,37 +12,44 @@ body{
 
 header{
     background-color: blue;
-    grid-row: 0;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .container{
     background-color: aquamarine;
     display: grid; 
-    grid-row: 2; 
+    grid-row-start: 2;
+    grid-row-end: 7; 
     grid-template-columns: repeat(9, 10%); 
     grid-template-rows: repeat(9, 10%);
 }
 
 .navbar{
-    background-color: rgb(116, 74, 20);
+    background-color: rgb(10, 171, 192);
     grid-row-start: 1;
-    grid-row-end: 3;
+    grid-row-end: 2;
     grid-column-start: 1;
-    grid-column-end: 12;
+    grid-column-end: 12;    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 
 }
 
 .aside{
     background-color: cadetblue;
-    grid-row-start: 3;
+    grid-row-start: 2;
     grid-row-end: 12;
     grid-column-start: 1;
     grid-column-end: 3;
 }
 
 .content{
-    background-color: bisque;
-    grid-row-start: 3;
+    background-color: rgb(29, 12, 139);
+    grid-row-start: 2;
     grid-row-end: 12;
     grid-column-start: 3;
     grid-column-end: 12;
@@ -50,5 +57,19 @@ header{
 
 footer{
     background-color: blueviolet;
-    grid-row: 6;
+    grid-row-start: 7;
+    grid-row-end: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.navbarTitle{
+    margin-right: 30px;
+    padding-right: 30px;
+}
+
+.paragraphe{
+    margin: 20px;
 }
