@@ -83,7 +83,7 @@ footer{
     
     body {
         grid-template-columns: 1fr;
-        grid-template-rows:10% 9fr;
+        grid-template-rows:10% 7fr 10%;
     }
 
     header{
@@ -100,7 +100,7 @@ footer{
         display: grid; 
         grid-row-start: 2;
         grid-row-end: 7; 
-        grid-template-rows:10% 9fr;
+        grid-template-rows:10% 45% 45%;
         grid-template-columns: 1fr;
     }
 
