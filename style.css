@@ -1,6 +1,24 @@
+/*
+La bonne pratique
+Et oui, il existe une bonne pratique pour ajouter ces polices d’écriture en CSS : insérer une règle @font-face pour chaque cas qu’il est possible de rencontrer. Donc : pour chaque poids (épaisseur) utilisé, et pour chacun d’eux, une nouvelle règle si ce poids est utilisé en italique.
+Pour ajouter la police d’écriture basique, nous allons alors ajouter deux règles : la première normale et la seconde pour l’italique.
+*/
+@font-face {
+	font-family: 'Dijkstra';
+	font-weight: 400;
+	src: url('./assets/fonts/Dijkstra Regular/Dijkstra Regular.ttf') format('truetype')
+}
+@font-face {
+	font-family: 'Dijkstra';
+	font-weight: 700;
+	src: url('./assets/fonts/Dijkstra Regular/Dijkstra Regular.ttf') format('truetype')
+}
+
+
 html, body{
     height: 100%;
     margin: 0;
+
 }
 
 body{
@@ -17,6 +35,7 @@ header{
     display: flex;
     justify-content: center;
     align-items: center;
+    font-family: "dijkstra";
 }
 
 .container{
@@ -26,6 +45,7 @@ header{
     grid-row-end: 7; 
     grid-template-columns: repeat(9, 10%); 
     grid-template-rows: repeat(9, 10%);
+    font-family: "dijkstra";
 }
 
 .navbar{
@@ -59,15 +79,41 @@ footer{
     background-color: blueviolet;
     grid-row-start: 7;
     grid-row-end: 10;
+    grid-column-start: 1;
+    grid-column-end: 12;
+    font-family: "dijkstra";
+    display: grid;
+    grid-template-columns: repeat(9, 10%); 
+    grid-template-rows: repeat(9, 10%);
+
+}
+
+.leftFooter{
+    grid-row-start: 1;
+    grid-row-end: 10;
+    grid-column-start: 1;
+    grid-column-end: 3;
     display: flex;
     justify-content: center;
     align-items: center;
+}
 
+.rightFooter{
+    grid-row-start: 1;
+    grid-row-end: 10;
+    grid-column-start: 3;
+    grid-column-end: 10;
+    margin-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .navbarTitle{
     margin-right: 30px;
     padding-right: 30px;
+    font-family: "dijkstra";
 }
 
 .paragraphe{
@@ -100,7 +146,7 @@ footer{
         display: grid; 
         grid-row-start: 2;
         grid-row-end: 7; 
-        grid-template-rows:10% 45% 45%;
+        grid-template-rows:10% 25% 65%;
         grid-template-columns: 1fr;
     }
 
@@ -132,19 +178,40 @@ footer{
         grid-column-end: 2;  
     }
     
-}
+    footer{
+        background-color: blueviolet;
+        grid-row-start: 7;
+        grid-row-end: 10;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        display: grid;
+        grid-template-columns: 1fr; 
+        grid-template-rows: repeat(9, 10%);
 
-footer{
-    background-color: blueviolet;
-    grid-row-start: 7;
-    grid-row-end: 10;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    }
 
-}
+    .leftFooter{
+        grid-row-start: 1;
+        grid-row-end: 3;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .rightFooter{
+        grid-row-start: 3;
+        grid-row-end: 10;
+        grid-column-start: 1;
+        grid-column-end: 2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
 /* Media Query pour les écrans de petite taille */
-@media screen and (max-width: 480px) {
+    @media screen and (max-width: 480px) {
 
+    }
 }
