@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<title>wp_theme</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+
+
+
+
+<!-- Body -->
+    <body>
+
+<!-- Header -->
+    <header>
+        <h1> WP_THEME </h1>
+    </header>
+    
+            <div class="container">
+
+                <div class="navbar">
+                <h2> NAVBAR </h2>
+                </div>
+        
+                <div class="aside">
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Animi odio cum aperiam qui assumenda quos. Labore debitis omnis iure, eveniet impedit, vero voluptatem ducimus modi non praesentium placeat odit ullam?</p>
+                </div>
+
+                <div class ="content">
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga consectetur obcaecati fugiat? Illum dolorem commodi distinctio exercitationem impedit laborum? Eaque unde, ad delectus hic cum tempore cupiditate ratione sunt aperiam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet ipsam nemo iusto voluptatum, blanditiis, nobis illo dolore unde perspiciatis sed laborum cumque tenetur! Magnam hic laboriosam vero velit sit possimus!</p>
+                </div>
+        
+            </div>
+    
+    
+ <!-- Footer -->
+    <footer>
+        <h1> THE FOOTER </h1>
+    </footer>   
+       
+</body>
+
+<script>
+
+    function realHour(){
+        let date1 = new Date();
+        let heure = date1.getHours()
+        let ima = document.getElementById("monImage")
+        
+                if ( heure>=6 && heure<10 ){
+                    ima.src = ("sunrise.jpg")
+                }
+                if (heure>=10 && heure<18){
+                    ima.src = ("zenith.jpg")
+                }
+                if (heure>=18 && heure<22){
+                    ima.src = ("sunset.jpg")
+                }
+                if (heure>=22 || heure<6){
+                    ima.src = ("night.jpg")
+                }
+
+    //le dernier if n'est pas necessaire si l'image par defaut est nuit
+    // attention à mettre "ou / ||" à la place de "et / &&" en conditions pour simuler le 
+    //cadran horaire qui se réinitialise
+}
+
+    function fakeHour(){
+        let date1 = new Date();
+        let heure = document.getElementById("fakeH").value;
+        let ima = document.querySelector(".parametrable");
+        
+                if ( heure>=6 && heure<10 ){
+                    ima.src = ("sunrise.jpg")
+                }
+                if (heure>=10 && heure<18){
+                    ima.src = ("zenith.jpg")
+                }
+                if (heure>=18 && heure<22){
+                    ima.src = ("sunset.jpg")
+                }
+                if (heure>=22 || heure<6){
+                    ima.src = ("night.jpg")
+                }
+    }
+
+// Appeler la fonction realHour des le chargement de la page
+document.addEventListener("DOMContentLoaded", realHour);	
+// Mettre à jour l'image toutes les 1 minute (60 000 = 60 000 millisecondes) 
+setInterval(realHour, 60000);
+
+</script>
+</html>
